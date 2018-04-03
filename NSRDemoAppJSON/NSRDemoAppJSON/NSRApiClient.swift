@@ -34,4 +34,26 @@ class NSRApiClient: NSObject {
         }
         dataTask.resume()
     }
+    
+    func downloadAndCachedImage(fromUrl url : URL, onCompletion : @escaping (UIImage?) ->Void) {
+        
+        let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 2) // Will be changing timeout very frequently
+        let ephemeralConfguration = URLSessionConfiguration.background(withIdentifier: "com.randomtext.myidentifier")
+        
+        let session = URLSession(configuration: ephemeralConfguration)
+        
+        let downloadTask = session.downloadTask(with: urlRequest) { (fileURL, urlResponse, err) in
+            
+            if let file = fileURL, let urlResponse = urlResponse {
+                let data = try? Data.init(contentsOf: file)
+                CachedURLResponse(response: urlResponse, data: data, userInfo: nil, storagePolicy: .allowed)
+            }
+            
+            
+        }
+        
+        downloadTask.resume()
+    }
+    
+    
 }

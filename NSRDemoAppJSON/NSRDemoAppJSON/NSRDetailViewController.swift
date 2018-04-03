@@ -10,6 +10,9 @@ import UIKit
 
 class NSRDetailViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var detailImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

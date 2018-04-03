@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0E4A405E2073655B005454FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A405D2073655B005454FF /* AppDelegate.swift */; };
-		0E4A40602073655B005454FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A405F2073655B005454FF /* ViewController.swift */; };
 		0E4A40632073655B005454FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A40612073655B005454FF /* Main.storyboard */; };
 		0E4A40652073655B005454FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A40642073655B005454FF /* Assets.xcassets */; };
 		0E4A40682073655B005454FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A40662073655B005454FF /* LaunchScreen.storyboard */; };
+		0E4A40702073665C005454FF /* NSRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A406F2073665C005454FF /* NSRMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E4A405A2073655B005454FF /* NSRDemoAppJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSRDemoAppJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4A405D2073655B005454FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E4A405F2073655B005454FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E4A40622073655B005454FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E4A40642073655B005454FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E4A40672073655B005454FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E4A40692073655B005454FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E4A406F2073665C005454FF /* NSRMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				0E4A405D2073655B005454FF /* AppDelegate.swift */,
-				0E4A405F2073655B005454FF /* ViewController.swift */,
+				0E4A406F2073665C005454FF /* NSRMainViewController.swift */,
 				0E4A40612073655B005454FF /* Main.storyboard */,
 				0E4A40642073655B005454FF /* Assets.xcassets */,
 				0E4A40662073655B005454FF /* LaunchScreen.storyboard */,
@@ -90,6 +90,7 @@
 		0E4A40522073655B005454FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NSR;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Nasir Ahmed Momin";
@@ -136,8 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E4A40602073655B005454FF /* ViewController.swift in Sources */,
 				0E4A405E2073655B005454FF /* AppDelegate.swift in Sources */,
+				0E4A40702073665C005454FF /* NSRMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

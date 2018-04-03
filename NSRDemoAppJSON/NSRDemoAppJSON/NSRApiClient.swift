@@ -34,7 +34,8 @@ class NSRApiClient: NSObject {
         }
         dataTask.resume()
     }
-    
+    // https://api.myjson.com/bins/15xko3
+    // https://pastebin.com/rdV8thr5
     func downloadAndCachedImage(fromUrl url : URL, onCompletion : @escaping (UIImage?) ->Void) {
         
         let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 2) // Will be changing timeout very frequently
@@ -46,7 +47,7 @@ class NSRApiClient: NSObject {
             
             if let file = fileURL, let urlResponse = urlResponse {
                 let data = try? Data.init(contentsOf: file)
-                CachedURLResponse(response: urlResponse, data: data, userInfo: nil, storagePolicy: .allowed)
+                CachedURLResponse(response: urlResponse, data: , userInfo: nil, storagePolicy: .allowed)
             }
             
             

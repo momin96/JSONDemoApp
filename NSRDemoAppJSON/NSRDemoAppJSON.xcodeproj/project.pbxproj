@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E162D4420738C78001D26D6 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E162D4320738C78001D26D6 /* ResponseData.swift */; };
+		0E162D46207390CB001D26D6 /* NSRDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E162D45207390CB001D26D6 /* NSRDetailViewController.swift */; };
 		0E4A405E2073655B005454FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A405D2073655B005454FF /* AppDelegate.swift */; };
 		0E4A40632073655B005454FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A40612073655B005454FF /* Main.storyboard */; };
 		0E4A40652073655B005454FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A40642073655B005454FF /* Assets.xcassets */; };
 		0E4A40682073655B005454FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A40662073655B005454FF /* LaunchScreen.storyboard */; };
 		0E4A40702073665C005454FF /* NSRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A406F2073665C005454FF /* NSRMainViewController.swift */; };
+		0E4A40722073723F005454FF /* NSRApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A40712073723F005454FF /* NSRApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E162D4320738C78001D26D6 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		0E162D45207390CB001D26D6 /* NSRDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRDetailViewController.swift; sourceTree = "<group>"; };
 		0E4A405A2073655B005454FF /* NSRDemoAppJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSRDemoAppJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4A405D2073655B005454FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E4A40622073655B005454FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		0E4A40672073655B005454FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E4A40692073655B005454FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E4A406F2073665C005454FF /* NSRMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRMainViewController.swift; sourceTree = "<group>"; };
+		0E4A40712073723F005454FF /* NSRApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				0E4A405D2073655B005454FF /* AppDelegate.swift */,
 				0E4A406F2073665C005454FF /* NSRMainViewController.swift */,
+				0E162D45207390CB001D26D6 /* NSRDetailViewController.swift */,
+				0E162D4320738C78001D26D6 /* ResponseData.swift */,
+				0E4A40712073723F005454FF /* NSRApiClient.swift */,
 				0E4A40612073655B005454FF /* Main.storyboard */,
 				0E4A40642073655B005454FF /* Assets.xcassets */,
 				0E4A40662073655B005454FF /* LaunchScreen.storyboard */,
@@ -138,7 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4A405E2073655B005454FF /* AppDelegate.swift in Sources */,
+				0E4A40722073723F005454FF /* NSRApiClient.swift in Sources */,
+				0E162D4420738C78001D26D6 /* ResponseData.swift in Sources */,
 				0E4A40702073665C005454FF /* NSRMainViewController.swift in Sources */,
+				0E162D46207390CB001D26D6 /* NSRDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

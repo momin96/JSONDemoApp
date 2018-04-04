@@ -22,7 +22,7 @@ struct ResponseData {
 //        }
         
         self.companies = companies.map { (company) -> Company in
-        print("company \(company)")
+//        print("company \(company)")
         let name = company["name"] as! String
         let logo = company["logo"] as! String
         let image = company["image"] as! String

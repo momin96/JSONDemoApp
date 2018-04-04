@@ -18,7 +18,7 @@ class NSRMainViewController: UITableViewController {
         NSRApiClient.apiClient.initGetRequest(forURL: URL.init(string: API_ENDPOINT)!) { (response) in
             if let response = response {
                 let list = response["companies"] as! [[String:Any]]
-                print(list)
+//                print(list)
                 self.responseData = ResponseData(companies: list)
                 OperationQueue.main.addOperation {
                     self.tableView.reloadData()

@@ -26,36 +26,38 @@ class NSRDetailViewController: UIViewController {
         let logoURLString = company.logo
         let imageURLString = company.image
         
-        
         let group = DispatchGroup()
         
         group.enter()
         NSRApiClient.apiClient.downloadAndCachedImage(fromUrl: URL(string: logoURLString!)!) { (image) in
             OperationQueue.main.addOperation {
-                self.logoImageView.image = image
+                if (image != nil) {
+                    self.logoImageView.image = image
+                }
+                group.leave()
             }
-            group.leave()
         }
         
         group.enter()
         NSRApiClient.apiClient.downloadAndCachedImage(fromUrl: URL(string : imageURLString!)!) { (image) in
-            
+
 //            let imageRenderOperation = Operation()
 //            imageRenderOperation.qualityOfService = .userInteractive
 //            imageRenderOperation.completionBlock = {
 //                self.detailImageView.image = image
 //            }
             OperationQueue.main.addOperation {
-                self.detailImageView.image = image
+                if (image != nil) {
+                    self.detailImageView.image = image
+                }
+                group.leave()
             }
-            
+
 //            OperationQueue.main.addOperation(imageRenderOperation)
-            group.leave()
         }
         
         group.notify(queue: DispatchQueue.main) {
             self.activityIndcator.stopAnimating()
         }
-        
     }
 }

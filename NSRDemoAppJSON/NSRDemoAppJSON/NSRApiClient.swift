@@ -39,8 +39,8 @@ class NSRApiClient: NSObject {
 
     func downloadAndCachedImage(fromUrl url : URL, onCompletion : @escaping (UIImage?) ->Void) {
         
-        let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 2) // Will be changing timeout very frequently
-        let ephemeralConfguration = URLSessionConfiguration.ephemeral
+        let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 20) // Will be changing timeout very frequently
+        let ephemeralConfguration = URLSessionConfiguration.default
         
         let session = URLSession(configuration: ephemeralConfguration)
         

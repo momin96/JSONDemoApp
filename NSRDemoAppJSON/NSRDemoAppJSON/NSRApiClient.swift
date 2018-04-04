@@ -36,12 +36,11 @@ class NSRApiClient: NSObject {
         }
         dataTask.resume()
     }
-    // https://api.myjson.com/bins/15xko3
-    // https://pastebin.com/rdV8thr5
+
     func downloadAndCachedImage(fromUrl url : URL, onCompletion : @escaping (UIImage?) ->Void) {
         
         let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 2) // Will be changing timeout very frequently
-        let ephemeralConfguration = URLSessionConfiguration.background(withIdentifier: "com.randomtext.myidentifier")
+        let ephemeralConfguration = URLSessionConfiguration.ephemeral
         
         let session = URLSession(configuration: ephemeralConfguration)
         
@@ -49,10 +48,13 @@ class NSRApiClient: NSObject {
             
             if let file = fileURL, let urlResponse = urlResponse {
                 let data = try? Data.init(contentsOf: file)
-//                CachedURLResponse(response: urlResponse, data: , userInfo: nil, storagePolicy: .allowed)
+                _ = CachedURLResponse(response: urlResponse, data: data!, userInfo: nil, storagePolicy: .allowed)
+                let image = UIImage(contentsOfFile: file.path)
+                onCompletion(image)
             }
-            
-            
+            else {
+                onCompletion(nil)
+            }
         }
         
         downloadTask.resume()

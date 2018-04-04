@@ -62,11 +62,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="A4w-jM-uQE">
+                                <rect key="frame" x="169" y="315.5" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A4w-jM-uQE" firstAttribute="centerY" secondItem="veu-ib-CZ6" secondAttribute="centerY" id="2wr-w1-3MH"/>
+                            <constraint firstItem="A4w-jM-uQE" firstAttribute="centerX" secondItem="veu-ib-CZ6" secondAttribute="centerX" id="6qu-r3-zr0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1W4-dc-ZT3"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndcator" destination="A4w-jM-uQE" id="zlV-b9-teR"/>
                         <outlet property="detailImageView" destination="iHt-v5-Hih" id="Idv-9O-mDm"/>
                         <outlet property="logoImageView" destination="wNh-xR-BKT" id="mjH-6U-dSy"/>
                         <outlet property="titleLabel" destination="IcF-Lz-auh" id="puS-0m-lvG"/>

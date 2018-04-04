@@ -15,13 +15,47 @@ class NSRDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var activityIndcator: UIActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = company.title
 
+        let logoURLString = company.logo
+        let imageURLString = company.image
         
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        NSRApiClient.apiClient.downloadAndCachedImage(fromUrl: URL(string: logoURLString!)!) { (image) in
+            OperationQueue.main.addOperation {
+                self.logoImageView.image = image
+            }
+            group.leave()
+        }
+        
+        group.enter()
+        NSRApiClient.apiClient.downloadAndCachedImage(fromUrl: URL(string : imageURLString!)!) { (image) in
+            
+//            let imageRenderOperation = Operation()
+//            imageRenderOperation.qualityOfService = .userInteractive
+//            imageRenderOperation.completionBlock = {
+//                self.detailImageView.image = image
+//            }
+            OperationQueue.main.addOperation {
+                self.detailImageView.image = image
+            }
+            
+//            OperationQueue.main.addOperation(imageRenderOperation)
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            self.activityIndcator.stopAnimating()
+        }
         
     }
 }

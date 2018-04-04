@@ -10,14 +10,14 @@ import UIKit
 
 class NSRMainViewController: UITableViewController {
 
-    var responseData = ResponseData()
+    var responseData : ResponseData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NSRApiClient.apiClient.initGetRequest(forURL: URL.init(string: API_ENDPOINT)!) { (response) in
             if let response = response {
-                let list = response["companies"] as! [String]
+                let list = response["companies"] as! [[String:Any]]
                 print(list)
                 self.responseData = ResponseData(companies: list)
                 OperationQueue.main.addOperation {
@@ -29,26 +29,33 @@ class NSRMainViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = ""
     }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return responseData.companies.count
+        if let res = responseData {
+            return res.companies.count
+        }
+        return 0;
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "cellId"
         let cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-        cell.textLabel?.text = responseData.companies[indexPath.row] as String
+        let company  = responseData?.companies[indexPath.row]
+        cell.textLabel?.text = company?.title
         return cell
     }
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let companyName = responseData.companies[indexPath.row] as String
+
+        let company  = responseData?.companies[indexPath.row]
+        
         let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "NSRDetailViewController") as! NSRDetailViewController
-        self.navigationItem.title = companyName
+        
+        detailsViewController.company = company!
+        
         self.navigationController?.show(detailsViewController, sender: nil)
     }
 

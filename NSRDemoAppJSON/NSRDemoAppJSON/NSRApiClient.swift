@@ -8,7 +8,9 @@
 
 import UIKit
 
-let API_ENDPOINT = "https://api.myjson.com/bins/vi56v"
+
+
+let API_ENDPOINT = "https://api.myjson.com/bins/psqy3"  //https://api.myjson.com/bins/vi56v"
 
 class NSRApiClient: NSObject {
 
@@ -47,7 +49,7 @@ class NSRApiClient: NSObject {
             
             if let file = fileURL, let urlResponse = urlResponse {
                 let data = try? Data.init(contentsOf: file)
-                CachedURLResponse(response: urlResponse, data: , userInfo: nil, storagePolicy: .allowed)
+//                CachedURLResponse(response: urlResponse, data: , userInfo: nil, storagePolicy: .allowed)
             }
             
             

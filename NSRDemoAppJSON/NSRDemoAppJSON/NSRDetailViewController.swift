@@ -10,21 +10,18 @@ import UIKit
 
 class NSRDetailViewController: UIViewController {
 
+    var company : Company = Company()
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var detailImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = company.title
+
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-
-
 }

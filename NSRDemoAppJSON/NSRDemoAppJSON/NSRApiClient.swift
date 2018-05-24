@@ -12,7 +12,7 @@ import UIKit
 
 let API_ENDPOINT = "https://api.myjson.com/bins/psqy3"  //https://api.myjson.com/bins/vi56v"
 
-class NSRApiClient: NSObject {
+class NSRApiClient: NSObject, URLSessionDelegate {
 
     static let apiClient = NSRApiClient()
     
@@ -39,7 +39,8 @@ class NSRApiClient: NSObject {
 
     func downloadAndCachedImage(fromUrl url : URL, onCompletion : @escaping (UIImage?) ->Void) {
         
-        let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 20) // Will be changing timeout very frequently
+        let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 2) // Will be changing timeout very frequently
+        
         let ephemeralConfguration = URLSessionConfiguration.default
         
         let session = URLSession(configuration: ephemeralConfguration)
@@ -58,6 +59,14 @@ class NSRApiClient: NSObject {
         }
         
         downloadTask.resume()
+    }
+    
+    func downloadImage(fromURL url : URL) {
+
+        let configuration = URLSessionConfiguration.background(withIdentifier: "com.randomtext.anotherrandomtext")
+        
+        let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+        
     }
     
     
